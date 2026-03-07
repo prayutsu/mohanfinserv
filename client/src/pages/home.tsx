@@ -2,9 +2,7 @@ import React from "react";
 import { siteConfig, services, team, testimonials, coreValues, whyChooseUs, mission, vision } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, ChevronRight, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Phone, Mail, ChevronRight, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/images/hero.jpg";
 import officeImg from "@/assets/images/office.jpg";
 
@@ -337,69 +335,32 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-2xl mx-auto text-center">
+              <img src={officeImg} alt="Office" className="w-full h-64 object-cover mb-10 grayscale-[30%]" />
+              <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Get in Touch</h2>
+              <h3 className="text-4xl font-serif text-white mb-12">Ready to grow with confidence?</h3>
               
-              {/* Contact Info */}
-              <div className="relative">
-                <img src={officeImg} alt="Office" className="w-full h-64 object-cover mb-10 grayscale-[30%]" />
-                <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Get in Touch</h2>
-                <h3 className="text-4xl font-serif text-white mb-8">Ready to grow with confidence?</h3>
+              <div className="space-y-8">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                    <Phone className="text-secondary w-6 h-6" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm text-white/70 font-medium mb-1">Phone</p>
+                    <p className="text-lg text-white">{siteConfig.contact.phone}</p>
+                  </div>
+                </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 flex items-center justify-center">
-                      <Phone className="text-secondary w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 font-medium mb-1">Phone</p>
-                      <p className="text-white">{siteConfig.contact.phone}</p>
-                    </div>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                    <Mail className="text-secondary w-6 h-6" />
                   </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 flex items-center justify-center">
-                      <Mail className="text-secondary w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 font-medium mb-1">Email</p>
-                      <p className="text-white">{siteConfig.contact.email}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 flex items-center justify-center">
-                      <MapPin className="text-secondary w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 font-medium mb-1">Address</p>
-                      <p className="text-white">{siteConfig.contact.address}</p>
-                    </div>
+                  <div className="text-left">
+                    <p className="text-sm text-white/70 font-medium mb-1">Email</p>
+                    <p className="text-lg text-white">{siteConfig.contact.email}</p>
                   </div>
                 </div>
               </div>
-
-              {/* Contact Form */}
-              <div className="bg-white/5 p-8 md:p-12 border border-white/10">
-                <h3 className="text-2xl font-serif text-white mb-6">Send us a message</h3>
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="space-y-2">
-                    <label className="text-sm text-white/80">Full Name</label>
-                    <Input data-testid="input-name" placeholder="John Doe" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-none h-12 focus-visible:ring-secondary focus-visible:border-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-white/80">Email Address</label>
-                    <Input data-testid="input-email" type="email" placeholder="john@company.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-none h-12 focus-visible:ring-secondary focus-visible:border-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm text-white/80">How can we help?</label>
-                    <Textarea data-testid="textarea-message" placeholder="Please describe your needs..." className="bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-none min-h-[120px] focus-visible:ring-secondary focus-visible:border-secondary resize-none" />
-                  </div>
-                  <Button data-testid="button-submit" type="button" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-none h-12 text-base font-medium mt-4">
-                    Send Inquiry
-                  </Button>
-                </form>
-              </div>
-
             </div>
           </div>
         </section>
