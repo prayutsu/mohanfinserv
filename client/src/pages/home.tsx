@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, ChevronRight, Menu, X, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronRight, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/images/hero.jpg";
 import officeImg from "@/assets/images/office.jpg";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [expandedService, setExpandedService] = React.useState<number | null>(null);
+  const [expandedProcess, setExpandedProcess] = React.useState<string | null>(null);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -38,9 +40,6 @@ export default function Home() {
             <button onClick={() => scrollToSection('about')} className="hover:text-primary transition-colors">About</button>
             <button onClick={() => scrollToSection('services')} className="hover:text-primary transition-colors">Services</button>
             <button onClick={() => scrollToSection('team')} className="hover:text-primary transition-colors">Our Team</button>
-            {siteConfig.features.showTestimonials && (
-               <button onClick={() => scrollToSection('testimonials')} className="hover:text-primary transition-colors">Testimonials</button>
-            )}
             <Button onClick={() => scrollToSection('contact')} variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-6">
               Contact Us
             </Button>
@@ -58,9 +57,6 @@ export default function Home() {
             <button onClick={() => scrollToSection('about')} className="text-left py-2 font-medium">About</button>
             <button onClick={() => scrollToSection('services')} className="text-left py-2 font-medium">Services</button>
             <button onClick={() => scrollToSection('team')} className="text-left py-2 font-medium">Our Team</button>
-             {siteConfig.features.showTestimonials && (
-               <button onClick={() => scrollToSection('testimonials')} className="text-left py-2 font-medium">Testimonials</button>
-            )}
             <Button onClick={() => scrollToSection('contact')} className="w-full bg-primary rounded-none mt-2">
               Contact Us
             </Button>
@@ -124,8 +120,11 @@ export default function Home() {
                 <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6">
                   {siteConfig.valueProposition}
                 </p>
-                <p className="text-primary-foreground/70 text-base leading-relaxed mb-8">
+                <p className="text-primary-foreground/70 text-base leading-relaxed mb-6">
                   Our services revolve around comprehensive financial management—including bookkeeping, accounting, compliance, accurate financial reporting, and investment advisory. Wherever financial challenges arise, we deliver clear, practical, and results-oriented solutions designed to create measurable impact.
+                </p>
+                <p className="text-primary-foreground/70 text-base leading-relaxed mb-8">
+                  We take a proactive approach—anticipating risks, optimizing financial processes, and enabling informed, data-driven decision-making. From managing day-to-day accounts to financial direction and planning, we take full accountability for your finance function, giving you the freedom to drive business growth without the burden of financial complexity.
                 </p>
                 <p className="text-primary-foreground/70 text-base leading-relaxed italic font-light">
                   "Your success is our balance sheet at Mohan Finserv."
@@ -204,6 +203,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-6">
               {services.map((service, index) => {
                 const Icon = service.icon;
+                const isExpanded = expandedService === index;
                 return (
                   <Card key={index} className="rounded-none border-border/50 hover:border-secondary/50 transition-colors duration-300 group bg-card">
                     <CardContent className="p-8 md:p-10">
@@ -211,7 +211,7 @@ export default function Home() {
                         <div className="flex-shrink-0 w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
                           <Icon className="w-6 h-6 text-primary group-hover:text-secondary transition-colors" />
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <h4 className="text-2xl font-serif font-medium text-primary">{service.title}</h4>
                         </div>
                       </div>
@@ -219,14 +219,81 @@ export default function Home() {
                         {service.description}
                       </p>
                       {service.highlights && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                           {service.highlights.map((highlight, hIdx) => (
                             <div key={hIdx} className="flex items-start gap-2 text-sm">
-                              <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                              <CheckCircleIcon className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
                               <span className="text-muted-foreground">{highlight}</span>
                             </div>
                           ))}
                         </div>
+                      )}
+
+                      {/* Expandable Details */}
+                      {(service.process || service.offerings) && (
+                        <>
+                          <button
+                            onClick={() => setExpandedService(isExpanded ? null : index)}
+                            className="flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors font-medium text-sm mt-6 pt-6 border-t border-border"
+                          >
+                            {isExpanded ? "Hide Details" : "View Details"}
+                            <ChevronDown className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                          </button>
+
+                          {isExpanded && (
+                            <div className="mt-6 pt-6 border-t border-border space-y-6">
+                              {/* Process Steps */}
+                              {service.process && (
+                                <div>
+                                  <h5 className="text-lg font-serif text-primary mb-4">How Our Services Work</h5>
+                                  <div className="space-y-3">
+                                    {service.process.map((proc, pIdx) => (
+                                      <div key={pIdx}>
+                                        <button
+                                          onClick={() => setExpandedProcess(expandedProcess === `${index}-${pIdx}` ? null : `${index}-${pIdx}`)}
+                                          className="flex items-start gap-3 w-full text-left py-3 px-4 bg-muted/50 hover:bg-muted transition-colors rounded-sm"
+                                        >
+                                          <span className="font-serif text-primary font-bold flex-shrink-0">{proc.step}</span>
+                                          <div className="flex-1">
+                                            <p className="font-semibold text-primary text-sm">{proc.title}</p>
+                                          </div>
+                                          <ChevronDown className={`w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5 transition-transform ${expandedProcess === `${index}-${pIdx}` ? 'rotate-180' : ''}`} />
+                                        </button>
+                                        {expandedProcess === `${index}-${pIdx}` && (
+                                          <div className="px-4 py-3 bg-background border border-border/50 border-t-0 text-sm text-muted-foreground leading-relaxed">
+                                            {proc.description}
+                                          </div>
+                                        )}
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Offerings List */}
+                              {service.offerings && (
+                                <div>
+                                  <h5 className="text-lg font-serif text-primary mb-4">What We Offer</h5>
+                                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    {service.offerings.map((offering, oIdx) => (
+                                      <li key={oIdx} className="flex items-start gap-2 text-sm">
+                                        <CheckCircleIcon className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                                        <span className="text-muted-foreground">{offering}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                              {/* Tagline */}
+                              {service.tagline && (
+                                <div className="mt-6 pt-6 border-t border-border">
+                                  <p className="text-primary font-semibold italic">{service.tagline}</p>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </>
                       )}
                     </CardContent>
                   </Card>
@@ -266,31 +333,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Testimonials Section */}
-        {siteConfig.features.showTestimonials && (
-          <section id="testimonials" className="py-24 bg-background border-t border-border">
-            <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
-              <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Client Success</h2>
-              <h3 className="text-4xl font-serif text-primary mb-16">What Our Clients Say</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                {testimonials.map((test, idx) => (
-                  <div key={idx} className="bg-primary/5 p-10 border border-border shadow-sm relative">
-                    <div className="absolute text-6xl text-secondary/15 font-serif top-4 left-6 leading-none">"</div>
-                    <p className="text-base text-primary/80 italic mb-8 relative z-10 leading-relaxed">
-                      {test.quote}
-                    </p>
-                    <div className="border-t border-border pt-4">
-                      <p className="font-semibold text-primary">{test.author}</p>
-                      <p className="text-sm text-muted-foreground">{test.company}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-primary text-primary-foreground">
@@ -412,4 +454,4 @@ export default function Home() {
 }
 
 // Import CheckCircle icon
-import { CheckCircle } from "lucide-react";
+import { CheckCircle as CheckCircleIcon } from "lucide-react";

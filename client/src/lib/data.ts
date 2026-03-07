@@ -6,7 +6,8 @@ import {
   Target,
   CheckCircle2,
   PieChart,
-  RefreshCw
+  RefreshCw,
+  ChevronDown
 } from "lucide-react";
 import React from "react";
 
@@ -27,7 +28,7 @@ export const siteConfig = {
   features: {
     showClients: false,
     showProjects: false,
-    showTestimonials: true,
+    showTestimonials: false,
   }
 };
 
@@ -44,7 +45,49 @@ export const services = [
       "Risk Management & Regulatory Compliance",
       "Investment & Capital Management",
       "Process Optimization Through Financial Automation"
-    ]
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Financial & Business Assessment",
+        description: "The procedure starts with a detailed evaluation of your business model, financial statements, cash flow structure, and operational processes to assess overall financial health and identify key challenges. This stage helps establish a strong foundation for effective financial management."
+      },
+      {
+        step: 2,
+        title: "Data Structuring & Financial Analysis",
+        description: "Financial data is organized, validated, and analyzed to gain clear insights into profitability, cost behavior, cash flow patterns, and performance trends. This analysis supports informed decision-making and highlights areas for improvement."
+      },
+      {
+        step: 3,
+        title: "Strategic Financial Planning & Budgeting",
+        description: "Based on analytical insights, we develop structured financial plans, budgets, and forecasts aligned with business goals, growth strategies, and operational requirements. This ensures better financial control and resource allocation."
+      },
+      {
+        step: 4,
+        title: "Cash Flow & Performance Monitoring",
+        description: "Monitor cash flow, working capital, and key financial metrics to ensure liquidity, cost discipline, and operational stability. Regular reviews help address deviations and improve financial performance."
+      },
+      {
+        step: 5,
+        title: "Reporting, Risk & Compliance Oversight",
+        description: "Timely MIS reports, performance dashboards, and financial reviews provide transparency and control. We also identify financial risks early and ensure compliance with statutory and regulatory requirements."
+      },
+      {
+        step: 6,
+        title: "Ongoing Advisory & Process Optimization",
+        description: "We provide continuous CFO-level advisory, guide capital planning and allocation decisions, and enhance financial processes through automation to improve efficiency, accuracy, and scalability."
+      }
+    ],
+    offerings: [
+      "Bookkeeping & Accounting",
+      "Monthly Reporting",
+      "Financial Statement Preparation",
+      "Cash Flow Management",
+      "Top-Line & Bottom-Line Improvement",
+      "Budgeting & Forecasting",
+      "Financial Analysis"
+    ],
+    tagline: "Grow your business; while we take care of your finances at Mohan Finserv"
   },
   {
     title: "Bookkeeping Services",
@@ -58,6 +101,47 @@ export const services = [
       "Efficient Financial Operations",
       "Improved Financial Oversight",
       "Enhanced Decision-Making"
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Structured Financial Data Collection",
+        description: "All financial transactions, including invoices, receipts, and bank statements, are gathered systematically using secure digital platforms. This ensures accurate, real-time recording and minimizes errors in financial documentation."
+      },
+      {
+        step: 2,
+        title: "Transaction Recording & Bank Reconciliation",
+        description: "Each transaction is carefully recorded and classified according to international accounting standards. Bank statements and financial records are reconciled regularly to identify discrepancies, prevent fraud, and maintain precise account balances. Automated reconciliation tools enhance speed and reliability."
+      },
+      {
+        step: 3,
+        title: "Financial Reporting, Analytics & Insights",
+        description: "Detailed financial statements and customized reports provide actionable insights into business performance. Real-time analytics support data-driven decisions, resource optimization, and strategic planning."
+      },
+      {
+        step: 4,
+        title: "Tax Preparation & Regulatory Compliance",
+        description: "Bookkeeping services integrate compliance checks to ensure all statutory requirements, tax filings, and international accounting standards are met. This minimizes risk and ensures timely submissions to regulatory authorities."
+      },
+      {
+        step: 5,
+        title: "Continuous Monitoring & Adaptive Financial Management",
+        description: "Ongoing review of financial transactions ensures consistency and accuracy. Bookkeeping solutions are flexible and designed to adapt to changes in business scale, complexity, or transaction volume while maintaining efficiency."
+      },
+      {
+        step: 6,
+        title: "Ongoing Support",
+        description: "Continuous bookkeeping support is provided through regular reviews, timely assistance, and ongoing access to financial data. Centralized bookkeeping systems enable seamless collaboration, real-time visibility, and informed decision-making as business needs evolve."
+      }
+    ],
+    offerings: [
+      "End-to-End Bookkeeping Management",
+      "General Ledger Maintenance",
+      "Accounts Payable Management",
+      "Accounts Receivable Management",
+      "Bank Reconciliation",
+      "Financial Statement Preparation",
+      "Tax Compliance & Reporting"
     ]
   },
   {
@@ -97,14 +181,6 @@ export const coreValues = [
 
 export const team = [
   {
-    name: "Pawan Daga",
-    role: "CA - Senior Financial Advisor",
-    qualification: "Chartered Accountant",
-    experience: "15+ years",
-    bio: "Chartered Accountant with 15+ years of experience in virtual CFO services, digital process automation, taxation, financial reporting, and strategic financial management.",
-    image: "/src/assets/images/team.jpg"
-  },
-  {
     name: "Khushi Munot",
     role: "CA - Risk & Governance Advisor",
     qualification: "Chartered Accountant",
@@ -127,14 +203,6 @@ export const team = [
     experience: "3+ years",
     bio: "Chartered Accountant with 3+ years of experience in financial analysis, business planning, and management reporting, delivering decision-ready financial insights.",
     image: "/src/assets/images/team.jpg"
-  },
-  {
-    name: "Kinjal Lalwani",
-    role: "CS - Compliance & Governance",
-    qualification: "Company Secretary",
-    experience: "3+ years",
-    bio: "Company Secretary with 3+ years of experience in corporate compliance, governance frameworks, and corporate secretarial functions.",
-    image: "/src/assets/images/team.jpg"
   }
 ];
 
@@ -155,19 +223,6 @@ export const whyChooseUs = [
   {
     title: "Dedicated Growth Partnership",
     icon: Target
-  }
-];
-
-export const testimonials = [
-  {
-    quote: "Mohan Finserv transformed our financial operations and gave us the confidence to make data-driven decisions. Their strategic guidance has been instrumental in our growth.",
-    author: "Raj Kumar",
-    company: "TechStart India"
-  },
-  {
-    quote: "Professional, responsive, and deeply knowledgeable. They manage our finances with the rigor of an in-house CFO, but without the overhead cost.",
-    author: "Priya Sharma",
-    company: "Manufacturing Solutions Ltd."
   }
 ];
 
