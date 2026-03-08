@@ -2,7 +2,7 @@ import React from "react";
 import { siteConfig, services, team, testimonials, coreValues, whyChooseUs, mission, vision } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, ChevronRight, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronRight, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/images/hero.jpg";
 import officeImg from "@/assets/images/office.jpg";
 
@@ -358,6 +358,16 @@ export default function Home() {
                   <div className="text-left">
                     <p className="text-sm text-white/70 font-medium mb-1">Email</p>
                     <p className="text-lg text-white">{siteConfig.contact.email}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                    <MapPin className="text-secondary w-6 h-6" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm text-white/70 font-medium mb-1">Address</p>
+                    <p className="text-lg text-white">{siteConfig.contact.address}</p>
                   </div>
                 </div>
               </div>

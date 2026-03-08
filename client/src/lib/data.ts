@@ -21,9 +21,9 @@ export const siteConfig = {
   valueProposition: "Mohan Finserv is a CFO consulting and financial advisory firm delivering integrated finance leadership across accounting, compliance, and strategic decision-making—helping businesses scale with clarity, control, and confidence.",
   cta: "Know More",
   contact: {
-    email: "hello@mohanfinserv.com",
-    phone: "+91 (XXX) XXXXXX",
-    address: "Financial District, India",
+    email: "mohanfinserv@mohan-finserv.com",
+    phone: "+91 70237 24839",
+    address: "206, PB Parekh Tower, 2nd floor, opposite Vanijya Bhawan, Kankaria Road, Ahmedabad, 380022",
   },
   features: {
     showClients: false,
