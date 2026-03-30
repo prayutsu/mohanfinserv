@@ -212,15 +212,7 @@ export const team = [
     qualification: "Chartered Accountant",
     experience: "4+ years",
     bio: "Chartered Accountant with 4+ years of experience across risk & governance advisory, insolvency resolution advisory, regulatory and GST oversight, forensic audits.",
-    image: "/src/assets/images/team.jpg"
-  },
-  {
-    name: "Deepanshu Mittal",
-    role: "CA - Financial Management Specialist",
-    qualification: "Chartered Accountant",
-    experience: "4+ years",
-    bio: "Chartered Accountant with 4+ years of experience in Virtual CFO Consulting, bookkeeping, accounting, reporting, compliance, and financial management.",
-    image: "/src/assets/images/team.jpg"
+    image: "/khushi.jpg"
   },
   {
     name: "Siddharth Parakh",
@@ -228,7 +220,15 @@ export const team = [
     qualification: "Chartered Accountant",
     experience: "3+ years",
     bio: "Chartered Accountant with 3+ years of experience in financial analysis, business planning, and management reporting, delivering decision-ready financial insights.",
-    image: "/src/assets/images/team.jpg"
+    image: "/siddharth.jpg"
+  },
+  {
+    name: "Deepanshu Mittal",
+    role: "CA - Financial Management Specialist",
+    qualification: "Chartered Accountant",
+    experience: "4+ years",
+    bio: "Chartered Accountant with 4+ years of experience in Virtual CFO Consulting, bookkeeping, accounting, reporting, compliance, and financial management.",
+    image: "/deepanshu.png"
   }
 ];
 
