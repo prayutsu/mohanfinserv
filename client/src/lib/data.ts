@@ -12,13 +12,13 @@ import {
 import React from "react";
 
 export const siteConfig = {
-  name: "Mohan Finserv",
+  name: "Mohan Strategic Financial Advisory",
   tagline: "CFO Consulting & Financial Advisory",
   description: "Integrated finance leadership across accounting, compliance, and strategic decision-making",
   headline: "Where Financial Intelligence Becomes Business Growth",
   subheadline: "Your trusted partner for Virtual CFO and financial advisory solutions",
   painPoint: "As your business grows, are you facing increasing financial complexities and looking for a trusted CFO consulting partner to strengthen your finance function and enable confident, data-driven decisions?",
-  valueProposition: "Mohan Finserv is a CFO consulting and financial advisory firm delivering integrated finance leadership across accounting, compliance, and strategic decision-making—helping businesses scale with clarity, control, and confidence.",
+  valueProposition: "Mohan Strategic Financial Advisory is a CFO consulting and financial advisory firm delivering integrated finance leadership across accounting, compliance, and strategic decision-making—helping businesses scale with clarity, control, and confidence.",
   cta: "Know More",
   contact: {
     email: "mohanfinserv@mohan-finserv.com",
@@ -87,7 +87,7 @@ export const services = [
       "Budgeting & Forecasting",
       "Financial Analysis"
     ],
-    tagline: "Grow your business; while we take care of your finances at Mohan Finserv"
+    tagline: "Grow your business; while we take care of your finances at Mohan Strategic Financial Advisory"
   },
   {
     title: "Bookkeeping Services",

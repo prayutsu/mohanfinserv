@@ -24,13 +24,8 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-sm">
-              <span className="text-secondary font-serif font-bold text-xl leading-none">M</span>
-            </div>
-            <span className="font-serif font-semibold text-lg tracking-tight text-primary">
-              {siteConfig.name}
-            </span>
+          <div className="flex items-center">
+            <img src="/logo.png" alt={siteConfig.name} className="h-12 w-auto object-contain" />
           </div>
 
           {/* Desktop Nav */}
@@ -125,7 +120,7 @@ export default function Home() {
                   We take a proactive approach—anticipating risks, optimizing financial processes, and enabling informed, data-driven decision-making. From managing day-to-day accounts to financial direction and planning, we take full accountability for your finance function, giving you the freedom to drive business growth without the burden of financial complexity.
                 </p>
                 <p className="text-primary-foreground/70 text-base leading-relaxed italic font-light">
-                  "Your success is our balance sheet at Mohan Finserv."
+                  "Your success is our balance sheet at Mohan Strategic Financial Advisory."
                 </p>
               </div>
 
@@ -162,7 +157,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div className="max-w-xl">
                 <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Why Us</h2>
-                <h3 className="text-4xl font-serif text-primary">Why Choose Mohan Finserv</h3>
+                <h3 className="text-4xl font-serif text-primary">Why Choose Mohan Strategic Financial Advisory</h3>
               </div>
             </div>
 
@@ -335,37 +330,37 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="max-w-2xl mx-auto text-center">
+            <div className="max-w-2xl">
               <img src={officeImg} alt="Office" className="w-full h-64 object-cover mb-10 grayscale-[30%]" />
               <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Get in Touch</h2>
               <h3 className="text-4xl font-serif text-white mb-12">Ready to grow with confidence?</h3>
               
               <div className="space-y-8">
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="text-secondary w-6 h-6" />
                   </div>
-                  <div className="text-left">
+                  <div>
                     <p className="text-sm text-white/70 font-medium mb-1">Phone</p>
                     <p className="text-lg text-white">{siteConfig.contact.phone}</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center flex-shrink-0">
                     <Mail className="text-secondary w-6 h-6" />
                   </div>
-                  <div className="text-left">
+                  <div>
                     <p className="text-sm text-white/70 font-medium mb-1">Email</p>
                     <p className="text-lg text-white">{siteConfig.contact.email}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-white/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-secondary w-6 h-6" />
                   </div>
-                  <div className="text-left">
+                  <div>
                     <p className="text-sm text-white/70 font-medium mb-1">Address</p>
                     <p className="text-lg text-white">{siteConfig.contact.address}</p>
                   </div>
@@ -381,13 +376,8 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 bg-secondary flex items-center justify-center rounded-sm">
-                  <span className="text-primary font-serif font-bold text-sm leading-none">M</span>
-                </div>
-                <span className="font-serif font-semibold text-lg text-white">
-                  {siteConfig.name}
-                </span>
+              <div className="flex items-center mb-4">
+                <img src="/logo.png" alt={siteConfig.name} className="h-12 w-auto object-contain brightness-0 invert" />
               </div>
               <p className="max-w-sm mb-6 text-sm">
                 {siteConfig.description}
