@@ -334,8 +334,8 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 md:px-8">
+            <img src="/contact-bg.jpg" alt="Office" className="w-full h-72 object-cover object-center mb-10" />
             <div className="max-w-2xl">
-              <img src={officeImg} alt="Office" className="w-full h-64 object-cover mb-10 grayscale-[30%]" />
               <h2 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-3">Get in Touch</h2>
               <h3 className="text-4xl font-serif text-white mb-12">Ready to grow with confidence?</h3>
               
