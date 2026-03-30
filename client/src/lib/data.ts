@@ -1,13 +1,13 @@
 import {
   TrendingUp,
-  Zap,
   BarChart3,
   Shield,
   Target,
   CheckCircle2,
-  PieChart,
   RefreshCw,
-  ChevronDown
+  FileCheck,
+  Scale,
+  Receipt
 } from "lucide-react";
 import React from "react";
 
@@ -145,14 +145,40 @@ export const services = [
     ]
   },
   {
-    title: "Capital Optimization Advisory",
-    description: "Expert guidance on optimizing your capital structure, evaluating investment opportunities, and supporting funding readiness for sustainable business growth.",
-    icon: PieChart,
+    title: "Licensing & Registrations",
+    description: "Seamless business setup and regulatory licensing services — covering the full lifecycle from incorporation to sector-specific approvals, so you operate with complete legal confidence.",
+    icon: FileCheck,
+    highlights: [
+      "Company & LLP incorporation (MCA/ROC filings)",
+      "GST, MSME, FSSAI, Shops & Establishment registration",
+      "Import-Export Code (IEC) & DGFT licences",
+      "Trade mark & intellectual property filings",
+      "NBFC, RERA, SEBI & RBI licence assistance"
+    ]
   },
   {
-    title: "Investment Planning",
-    description: "Comprehensive investment strategy and planning to align financial goals with business objectives and create long-term wealth.",
-    icon: Zap,
+    title: "Strategic Financial Management",
+    description: "Long-horizon financial strategy for businesses aiming to scale, restructure, or optimise capital — merging analytical rigour with real-world execution across complex financial decisions.",
+    icon: Scale,
+    highlights: [
+      "Business valuation & financial modelling",
+      "Debt structuring, refinancing & loan advisory",
+      "Merger, acquisition & due diligence support",
+      "Capital budgeting & investment appraisal",
+      "Exit planning & succession advisory"
+    ]
+  },
+  {
+    title: "Tax Planning & Compliance",
+    description: "End-to-end tax management that minimises liability, ensures full compliance, and protects your business from regulatory risk — across direct and indirect tax regimes.",
+    icon: Receipt,
+    highlights: [
+      "Income tax planning & ITR filing (individual & corporate)",
+      "GST registration, returns & reconciliation",
+      "TDS/TCS compliance & returns",
+      "Tax audit support & representation",
+      "Transfer pricing & international tax advisory"
+    ]
   }
 ];
 
