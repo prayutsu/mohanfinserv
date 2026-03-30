@@ -24,10 +24,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt={siteConfig.name} className="h-10 w-10 object-contain" />
-            <span className="font-serif font-semibold text-base tracking-tight text-primary leading-tight hidden sm:block">
-              Mohan<br /><span className="text-xs font-sans font-medium text-secondary tracking-widest uppercase">Strategic Financial Advisory</span>
+          <div className="flex items-center">
+            <span className="font-serif font-semibold text-lg tracking-tight text-primary">
+              {siteConfig.name}
             </span>
           </div>
 
@@ -379,10 +378,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/logo.png" alt={siteConfig.name} className="h-10 w-10 object-contain brightness-0 invert" />
-                <span className="font-serif font-semibold text-base text-white leading-tight">
-                  Mohan<br /><span className="text-xs font-sans font-medium text-secondary tracking-widest uppercase">Strategic Financial Advisory</span>
+              <div className="flex items-center mb-4">
+                <span className="font-serif font-semibold text-lg text-white">
+                  {siteConfig.name}
                 </span>
               </div>
               <p className="max-w-sm mb-6 text-sm">
