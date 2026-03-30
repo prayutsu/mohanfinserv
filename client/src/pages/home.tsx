@@ -313,10 +313,12 @@ export default function Home() {
               {team.map((member, idx) => (
                 <Card key={idx} className="rounded-none border-border hover:border-secondary/50 transition-colors">
                   <CardContent className="p-8">
-                    <div className="mb-6 h-48 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-4xl font-serif text-primary mb-2">{member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}</div>
-                      </div>
+                    <div className="mb-6 h-64 overflow-hidden">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
                     <h4 className="text-lg font-serif text-primary mb-1">{member.name}</h4>
                     <p className="text-secondary text-sm font-medium mb-1">{member.qualification}</p>
